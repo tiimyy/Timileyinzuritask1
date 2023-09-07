@@ -1,11 +1,16 @@
 'use strict'
 function updateTime() {
-    const currentTime = new Date();
-    const timeString = currentTime.toLocaleTimeString();
-    document.getElementById('time').textContent = timeString;
-    requestAnimationFrame(updateTime); // Request the next frame
+    const now = new Date();
+    const options = { hour12: false };
+    const timeString = now.toLocaleTimeString([], options);
+    console.log(timeString)
+    const milliseconds = now.getMilliseconds().toString().padStart(3, '0');
+    const formattedTime = `${timeString}.${milliseconds}`;
+    document.getElementById('time').textContent = formattedTime;
 }
-updateTime()
+
+updateTime(); // Initial update
+setInterval(updateTime, 100);
 
 
 function updateDayOfWeek() {
@@ -17,3 +22,6 @@ function updateDayOfWeek() {
 
 updateDayOfWeek(); // Initial update
 setInterval(updateDayOfWeek, 1000 * 60 * 60 * 24);
+
+
+
