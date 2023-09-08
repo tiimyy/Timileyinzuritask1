@@ -18,8 +18,7 @@ function updateUTC() {
     const milliseconds = now.getUTCMilliseconds().toString().padStart(3, '0');
     const formattedTime = `${hours}:${minutes}:${seconds}.${milliseconds}`;
     document.getElementById('time').textContent = formattedTime;
-    console.log(formattedTime);
 }
 
 updateUTC(); // Initial update
-setInterval(updateUTC, 1); 
+setInterval(updateUTC, 100); 
