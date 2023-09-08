@@ -12,13 +12,16 @@ function updateDayOfWeek() {
 updateDayOfWeek(); // Initial update
 setInterval(updateDayOfWeek, 1000 * 60 * 60 * 24);
 
- function updateUTC() {
-            const now = new Date();
-            const utcTimeString = now.toISOString().substr(11, 8); // Extract time (hh:mm:ss)
-            const milliseconds = now.getUTCMilliseconds().toString().padStart(3, '0');
-            const formattedTime = `${utcTimeString}.${milliseconds}`;
-            document.getElementById('time').textContent = formattedTime;
-        }
+function updateUTC() {
+    const now = new Date();
+    const hours = now.getUTCHours().toString().padStart(2, '0');
+    const minutes = now.getUTCMinutes().toString().padStart(2, '0');
+    const seconds = now.getUTCSeconds().toString().padStart(2, '0');
+    const milliseconds = now.getUTCMilliseconds().toString().padStart(3, '0');
+    const formattedTime = `${hours}:${minutes}:${seconds}.${milliseconds}`;
+    document.getElementById('time').textContent = formattedTime;
+    console.log(formattedTime);
+}
 
-        updateUTC(); // Initial update
-        setInterval(updateUTC, 1); /
+updateUTC(); // Initial update
+setInterval(updateUTC, 1); 
