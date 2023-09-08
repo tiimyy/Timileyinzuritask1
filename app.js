@@ -13,7 +13,7 @@ updateDayOfWeek(); // Initial update
 setInterval(updateDayOfWeek, 1000 * 60 * 60 * 24);
 
 function displayCurrentTime() {
-    var currentTimeMilliseconds = new Date().getTime();
+    var currentTimeMilliseconds = new Date().getUTCTime();
     document.getElementById("time").textContent = currentTimeMilliseconds;
 }
 
