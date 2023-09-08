@@ -1,29 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
     <title>Task1</title>
-</head>
-<body>
+  </head>
+  <body>
     <section>
-        <div class="card">
-            
-            <div class="image-container">
-                <img src="./IMG_4986.jpg" data-testid="slackDisplayImage" alt="Timileyin">
-            </div>
-            <div class="content-container">
-                <h1 data-testid="slackUserName">Timileyin</h1>
-                <p data-testid="currentDayofTheWeek" id="dayOfWeek"></p>
-                <p data-testid="currentUTCTime" id="time" >Track</p>
-                <p data-testid="myTrack">Front-end Development</p>
-                <a href="https://github.com/tiimyy/Timileyinzuritask1" data-testid="githubURL">My Github</a>
-
-            </div>
-            
+      <div class="card">
+        <div class="image-container">
+          <img
+            src="./IMG_4986.jpg"
+            data-testid="slackDisplayImage"
+            alt="Timileyin"
+          />
         </div>
+        <div class="content-container">
+            <!-- SLACK NAME -->
+          <h1 data-testid="slackUserName">Timileyin</h1>
+          <!-- CURRENT DAY OF THE WEEK -->
+          <p data-testid="currentDayofTheWeek" id="dayOfWeek"></p>
+          <!-- TIME IN MILLISECONDS -->
+          <p data-testid="currentUTCTime" id="time">TIME</p>
+          <!-- TRACK -->
+          <p data-testid="myTrack">Front-end Development</p>
+          <!-- GITHUB URL-->
+          <a
+            href="https://github.com/tiimyy/Timileyinzuritask1"
+            data-testid="githubURL"
+            >My Github</a
+          >
+        </div>
+      </div>
     </section>
     <script src="./app.js"></script>
-</body>
+  </body>
 </html>

@@ -1,16 +1,5 @@
 'use strict'
-function updateTime() {
-    const now = new Date();
-    const options = { hour12: false };
-    const timeString = now.toLocaleTimeString([], options);
-    console.log(timeString)
-    const milliseconds = now.getMilliseconds().toString().padStart(3, '0');
-    const formattedTime = `${timeString}.${milliseconds}`;
-    document.getElementById('time').textContent = formattedTime;
-}
 
-updateTime(); // Initial update
-setInterval(updateTime, 100);
 
 
 function updateDayOfWeek() {
@@ -23,5 +12,12 @@ function updateDayOfWeek() {
 updateDayOfWeek(); // Initial update
 setInterval(updateDayOfWeek, 1000 * 60 * 60 * 24);
 
+function displayCurrentTime() {
+    var currentTimeMilliseconds = new Date().getTime();
+    document.getElementById("time").textContent = currentTimeMilliseconds;
+}
 
+// Call the function to initially display the time
+displayCurrentTime();
 
+setInterval(displayCurrentTime, 100);
