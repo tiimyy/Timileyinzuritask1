@@ -12,12 +12,14 @@ function updateDayOfWeek() {
 updateDayOfWeek(); // Initial update
 setInterval(updateDayOfWeek, 1000 * 60 * 60 * 24);
 
-function displayCurrentTime() {
-    var currentTimeMilliseconds = new Date().getUTCHours();
-    document.getElementById("time").textContent = currentTimeMilliseconds;
-}
+    function updateUTC() {
+            const now = new Date();
+            const utcTimeString = now.toUTCString();
+            document.getElementById('time').textContent = utcTimeString;
+        }
 
-// Call the function to initially display the time
-displayCurrentTime();
+        updateUTC();
+        setInterval(updateUTC, 1000); // Update every second
+
 
 setInterval(displayCurrentTime, 100);
